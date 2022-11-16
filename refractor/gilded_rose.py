@@ -70,9 +70,9 @@ class BaseItem(Item):
             min_quality (int, optional): Minumum quality value of an item. Defaults to 0.
         """
         super().__init__(name, sell_in, quality)
-        self.max_quality = max_quality
-        self.min_quality = min_quality
-        self.default_quality_increment = default_quality_increment
+        self.max_quality: int = max_quality
+        self.min_quality: int = min_quality
+        self.default_quality_increment: int = default_quality_increment
 
     def daily_routine(self) -> None:
         """Execute the daily routine by running the sell in and quality routines.
@@ -91,7 +91,7 @@ class BaseItem(Item):
             if self.quality < self.min_quality:
                 self.quality = self.min_quality
 
-    def daily_sell_in(self):
+    def daily_sell_in(self) -> None:
         """Execute the base daily sell in routine.
         """
         self.sell_in -= 1
