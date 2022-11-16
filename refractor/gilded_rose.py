@@ -21,6 +21,7 @@ class Item:
         """
         return "%s, %s, %s" % (self.name, self.sell_in, self.quality)
 
+
 class GildedRose(object):
     def __init__(self, items: list[Item]) -> None:
         """Gildedrose object used by the legacy system.
